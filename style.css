@@ -1,0 +1,108 @@
+/* Custom Aesthetic CSS for Mayla Studios Bio Store */
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Card Transitions */
+.product-card {
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+}
+
+.product-card:active {
+  transform: scale(0.98);
+}
+
+/* Image zoom hover effect */
+.product-card .img-container img {
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.product-card:hover .img-container img {
+  transform: scale(1.05);
+}
+
+/* Badge specific styles */
+.badge-hot {
+  background: linear-gradient(135deg, #FF416C, #FF4B2B);
+  color: #FFFFFF;
+}
+
+.badge-new {
+  background: linear-gradient(135deg, #F59E0B, #D97706);
+  color: #FFFFFF;
+}
+
+.badge-best {
+  background: linear-gradient(135deg, #10B981, #059669);
+  color: #FFFFFF;
+}
+
+.badge-sale {
+  background: linear-gradient(135deg, #EC4899, #BE185D);
+  color: #FFFFFF;
+}
+
+/* Category Pill active state */
+.cat-pill.active {
+  background-color: #1C1917;
+  color: #FFFFFF;
+  border-color: #1C1917;
+  box-shadow: 0 4px 12px -2px rgba(28, 25, 23, 0.25);
+}
+
+/* Modal Open / Close Transition */
+#product-modal.show {
+  display: flex !important;
+}
+
+#product-modal.show #modal-card {
+  transform: translateY(0) scale(1);
+}
+
+/* Toast Animation */
+#toast.show {
+  opacity: 1;
+  transform: translate(-50%, 10px);
+}
+
+/* Line clamps */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Skeleton Loading Shimmer */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #F3F4F6 25%, #E5E7EB 50%, #F3F4F6 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}

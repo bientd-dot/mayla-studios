@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>MAYLA STUDIOS ✨ | Official Bio Store</title>
+  <meta name="description" content="MAYLA STUDIOS - Thời trang thiết kế nữ thanh lịch, nữ tính và hiện đại. Khám phá bộ sưu tập đầm váy, áo kiểu, set đồ mới nhất.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#FBF9F6',
+              100: '#F5EFEB',
+              200: '#EBDCCE',
+              300: '#DEC5B0',
+              400: '#C79E82',
+              500: '#B07B5A',
+              600: '#945F42',
+              700: '#754631',
+              800: '#5A3525',
+              900: '#3D2319',
+              dark: '#1C1917',
+              accent: '#C59B79'
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Phosphor Icons & Lucide Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#F8F6F2] text-stone-800 font-sans antialiased min-h-screen selection:bg-brand-200 selection:text-stone-900 pb-20">
+
+  <!-- Mobile Top Ambient Glow -->
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-xl h-64 bg-gradient-to-b from-brand-200/40 via-brand-100/20 to-transparent pointer-events-none -z-10 blur-2xl"></div>
+
+  <!-- Main Container (Passio style: centered mobile card layout, max-w-xl for optimal mobile-app look & feel) -->
+  <main class="max-w-xl mx-auto px-4 pt-6 sm:pt-10">
+
+    <!-- TOP BAR NAVIGATION -->
+    <header class="flex items-center justify-between py-2 mb-4">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-stone-900 text-stone-100 shadow-sm tracking-wider uppercase">
+          Official Store
+        </span>
+      </div>
+      <div class="flex items-center gap-2">
+        <!-- Share button -->
+        <button id="btn-share" title="Chia sẻ shop" class="w-9 h-9 rounded-full bg-white shadow-sm border border-stone-200/80 flex items-center justify-center text-stone-600 hover:text-stone-900 hover:bg-stone-50 transition active:scale-95">
+          <i class="ph ph-share-network text-lg"></i>
+        </button>
+        <!-- Heart / Wishlist button -->
+        <button id="btn-wishlist-toggle" title="Yêu thích" class="w-9 h-9 rounded-full bg-white shadow-sm border border-stone-200/80 flex items-center justify-center text-stone-600 hover:text-rose-500 hover:bg-stone-50 transition active:scale-95 relative">
+          <i class="ph ph-heart text-lg"></i>
+          <span id="wishlist-badge" class="hidden absolute -top-1 -right-1 w-4 h-4 bg-rose-500 text-white rounded-full text-[10px] font-bold flex items-center justify-center leading-none">0</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- BRAND PROFILE CARD (Passio Bio Header) -->
+    <section class="bg-white/80 backdrop-blur-md rounded-3xl p-6 shadow-sm border border-stone-200/60 text-center relative overflow-hidden mb-6">
+      <!-- Decorative background pattern -->
+      <div class="absolute -right-10 -top-10 w-32 h-32 bg-brand-100/50 rounded-full blur-xl pointer-events-none"></div>
+      <div class="absolute -left-10 -bottom-10 w-32 h-32 bg-brand-200/30 rounded-full blur-xl pointer-events-none"></div>
+
+      <!-- Avatar with story ring -->
+      <div class="relative inline-block mb-3">
+        <div class="w-24 h-24 rounded-full p-[2px] bg-gradient-to-tr from-brand-400 via-rose-300 to-amber-200 shadow-md">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" 
+               alt="Mayla Studios Avatar" 
+               class="w-full h-full object-cover rounded-full border-2 border-white">
+        </div>
+        <span class="absolute bottom-1 right-1 bg-blue-500 text-white p-1 rounded-full text-xs shadow" title="Tài khoản đã xác minh">
+          <i class="ph-fill ph-seal-check"></i>
+        </span>
+      </div>
+
+      <!-- Shop Name & Tagline -->
+      <h1 class="font-serif text-3xl font-bold tracking-tight text-stone-900 mb-1">MAYLA STUDIOS</h1>
+      <p class="text-xs font-semibold uppercase tracking-widest text-brand-600 mb-2">Modern Minimalist & Feminine Muse</p>
+      <p class="text-xs text-stone-600 max-w-sm mx-auto leading-relaxed mb-4">
+        "Thanh lịch từ những điều giản đơn. Thiết kế tinh tế cho nàng tự tin tỏa sáng mỗi ngày." 🌿✨
+      </p>
+
+      <!-- Key Info Badges -->
+      <div class="flex items-center justify-center gap-3 text-xs text-stone-600 border-y border-stone-100 py-2.5 mb-4 font-medium">
+        <div class="flex items-center gap-1">
+          <i class="ph-fill ph-star text-amber-500"></i>
+          <span>4.9/5 (2.8k đánh giá)</span>
+        </div>
+        <span class="text-stone-300">•</span>
+        <div class="flex items-center gap-1">
+          <i class="ph-fill ph-map-pin text-rose-500"></i>
+          <span>Hà Nội & TP. HCM</span>
+        </div>
+      </div>
+
+      <!-- Social / Contact Links (Passio round pill links) -->
+      <div class="flex flex-wrap items-center justify-center gap-2">
+        <a href="https://www.instagram.com/mayla.studios/" target="_blank" rel="noopener noreferrer" 
+           class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-rose-500 text-white text-xs font-medium shadow-sm hover:opacity-90 transition active:scale-95">
+          <i class="ph-bold ph-instagram-logo"></i>
+          <span>Instagram</span>
+        </a>
+
+        <a href="https://shopee.vn" target="_blank" rel="noopener noreferrer" 
+           class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#EE4D2D] text-white text-xs font-medium shadow-sm hover:opacity-90 transition active:scale-95">
+          <i class="ph-bold ph-shopping-bag"></i>
+          <span>Shopee Mall</span>
+        </a>
+
+        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" 
+           class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-stone-900 text-white text-xs font-medium shadow-sm hover:opacity-90 transition active:scale-95">
+          <i class="ph-bold ph-tiktok-logo"></i>
+          <span>TikTok Shop</span>
+        </a>
+
+        <a href="https://zalo.me" target="_blank" rel="noopener noreferrer" 
+           class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-600 text-white text-xs font-medium shadow-sm hover:opacity-90 transition active:scale-95">
+          <i class="ph-bold ph-chat-circle-dots"></i>
+          <span>Zalo Tư Vấn</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- PROMOTION BANNER CAROUSEL -->
+    <div class="relative overflow-hidden rounded-2xl bg-stone-900 text-white shadow-md mb-6 group">
+      <div class="relative h-44 sm:h-48 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=80" 
+             alt="New Collection Banner" 
+             class="w-full h-full object-cover object-center opacity-70 group-hover:scale-105 transition duration-700">
+        <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-transparent"></div>
+        <div class="absolute inset-0 p-5 flex flex-col justify-end">
+          <span class="inline-block px-2.5 py-0.5 rounded-md bg-brand-400 text-stone-950 text-[11px] font-bold uppercase tracking-wider w-fit mb-1.5">
+            NEW LOOKBOOK 2026
+          </span>
+          <h2 class="font-serif text-2xl sm:text-3xl font-semibold leading-tight mb-1">
+            Chớm Xuân • Elegance In Bloom
+          </h2>
+          <p class="text-xs text-stone-300 line-clamp-1">
+            Ưu đãi đến 20% cho các thiết kế đầm voan tơ & lụa mềm mại
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUICK HIGHLIGHT STORIES / LOOKBOOK CHIPS -->
+    <div class="flex items-center gap-3 overflow-x-auto no-scrollbar pb-2 mb-5">
+      <button onclick="filterByBadge('ALL')" class="flex-shrink-0 flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-white border border-stone-200/80 text-xs font-medium shadow-xs text-stone-700 hover:border-brand-500 hover:text-brand-700 active:scale-95 transition">
+        <span>✨</span> Tất cả thiết kế
+      </button>
+      <button onclick="filterByBadge('HOT')" class="flex-shrink-0 flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-white border border-stone-200/80 text-xs font-medium shadow-xs text-stone-700 hover:border-brand-500 hover:text-brand-700 active:scale-95 transition">
+        <span class="text-rose-500 font-bold">🔥</span> Bán chạy nhất
+      </button>
+      <button onclick="filterByBadge('NEW')" class="flex-shrink-0 flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-white border border-stone-200/80 text-xs font-medium shadow-xs text-stone-700 hover:border-brand-500 hover:text-brand-700 active:scale-95 transition">
+        <span class="text-amber-500 font-bold">🌱</span> Bộ sưu tập mới
+      </button>
+      <button onclick="filterByBadge('SALE')" class="flex-shrink-0 flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-white border border-stone-200/80 text-xs font-medium shadow-xs text-stone-700 hover:border-brand-500 hover:text-brand-700 active:scale-95 transition">
+        <span class="text-emerald-500 font-bold">🏷️</span> Đang ưu đãi
+      </button>
+    </div>
+
+    <!-- SEARCH & FILTER CONTROLS -->
+    <div class="sticky top-2 z-20 bg-[#F8F6F2]/95 backdrop-blur-md pt-1 pb-3 mb-4">
+      <div class="flex gap-2">
+        <!-- Search bar -->
+        <div class="relative flex-1">
+          <i class="ph ph-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-400 text-base"></i>
+          <input type="text" id="search-input" 
+                 placeholder="Tìm kiếm mẫu váy, áo kiểu, set đồ..." 
+                 class="w-full pl-9 pr-8 py-2.5 bg-white border border-stone-200/90 rounded-2xl text-xs sm:text-sm text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-brand-400/50 focus:border-brand-400 shadow-sm transition">
+          <button id="search-clear" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-600 text-xs">
+            <i class="ph-bold ph-x-circle text-base"></i>
+          </button>
+        </div>
+
+        <!-- Sort dropdown toggle -->
+        <div class="relative">
+          <select id="sort-select" class="appearance-none bg-white border border-stone-200/90 rounded-2xl px-3.5 py-2.5 text-xs text-stone-700 focus:outline-none focus:ring-2 focus:ring-brand-400/50 pr-8 shadow-sm cursor-pointer font-medium">
+            <option value="featured">Nổi bật</option>
+            <option value="price-low">Giá: Thấp → Cao</option>
+            <option value="price-high">Giá: Cao → Thấp</option>
+            <option value="name">Tên A-Z</option>
+          </select>
+          <i class="ph ph-caret-down absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 pointer-events-none text-xs"></i>
+        </div>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div id="category-pills" class="flex gap-1.5 overflow-x-auto no-scrollbar pt-3 text-xs">
+        <!-- Dynamic Category Pills inserted via JS -->
+      </div>
+    </div>
+
+    <!-- PRODUCTS RESULT COUNTER -->
+    <div class="flex items-center justify-between text-xs text-stone-500 mb-3 px-1 font-medium">
+      <span id="product-count">Đang tải sản phẩm...</span>
+      <span class="flex items-center gap-1 text-[11px] text-stone-400">
+        <i class="ph-bold ph-lightning text-brand-500"></i> Cập nhật liên tục
+      </span>
+    </div>
+
+    <!-- PRODUCT LIST / GRID (Passio 2-column mobile & desktop responsive) -->
+    <div id="product-grid" class="grid grid-cols-2 gap-3 sm:gap-4">
+      <!-- Dynamic Products injected by app.js -->
+    </div>
+
+    <!-- EMPTY STATE (shown if no items match) -->
+    <div id="empty-state" class="hidden py-16 text-center">
+      <div class="w-16 h-16 rounded-full bg-stone-200/60 flex items-center justify-center mx-auto mb-3 text-stone-400 text-2xl">
+        <i class="ph ph-coat-hanger"></i>
+      </div>
+      <h3 class="font-serif text-lg font-semibold text-stone-800 mb-1">Không tìm thấy sản phẩm nào</h3>
+      <p class="text-xs text-stone-500 max-w-xs mx-auto mb-4">
+        Vui lòng thử tìm với từ khoá khác hoặc chọn lại phân loại đồ nhé nàng!
+      </p>
+      <button onclick="resetFilters()" class="px-4 py-2 bg-stone-900 text-white rounded-xl text-xs font-medium hover:bg-stone-800 transition active:scale-95">
+        Xem tất cả sản phẩm
+      </button>
+    </div>
+
+    <!-- ABOUT / BRAND STORY ACCORDION -->
+    <section class="mt-10 bg-white/70 backdrop-blur rounded-2xl p-5 border border-stone-200/60 shadow-xs">
+      <h3 class="font-serif text-lg font-bold text-stone-900 mb-2 flex items-center gap-2">
+        <span>Về MAYLA STUDIOS</span>
+        <span class="text-xs font-sans font-normal text-stone-400">#MaylaGirl</span>
+      </h3>
+      <p class="text-xs text-stone-600 leading-relaxed mb-4">
+        Mayla Studios hướng tới vẻ đẹp tự nhiên, hiện đại nhưng không kém phần duyên dáng của người phụ nữ Việt. Từng nếp vải tơ tằm, linen mịn màng đến từng đường may tinh tế đều được chau chuốt kỹ lưỡng.
+      </p>
+
+      <div class="grid grid-cols-3 gap-2 text-center text-[11px] pt-3 border-t border-stone-100 font-medium text-stone-700">
+        <div class="p-2 rounded-xl bg-[#FAF8F5]">
+          <i class="ph-bold ph-arrows-counter-clockwise text-brand-600 text-base mb-1 block"></i>
+          <span>Đổi size trong 7 ngày</span>
+        </div>
+        <div class="p-2 rounded-xl bg-[#FAF8F5]">
+          <i class="ph-bold ph-shield-check text-brand-600 text-base mb-1 block"></i>
+          <span>Cam kết ảnh chụp thật</span>
+        </div>
+        <div class="p-2 rounded-xl bg-[#FAF8F5]">
+          <i class="ph-bold ph-package text-brand-600 text-base mb-1 block"></i>
+          <span>Hộp đóng gói sang trọng</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="mt-10 text-center text-xs text-stone-400 space-y-2">
+      <div class="flex items-center justify-center gap-4 text-stone-500">
+        <a href="https://www.instagram.com/mayla.studios/" target="_blank" class="hover:text-stone-900 transition">Instagram</a>
+        <span>•</span>
+        <a href="https://shopee.vn" target="_blank" class="hover:text-stone-900 transition">Shopee</a>
+        <span>•</span>
+        <a href="https://tiktok.com" target="_blank" class="hover:text-stone-900 transition">TikTok</a>
+      </div>
+      <p>© 2026 MAYLA STUDIOS. All rights reserved.</p>
+      <p class="text-[11px] text-stone-400">Thiết kế phong cách Bio Store tinh tế & sang trọng</p>
+    </footer>
+
+  </main>
+
+  <!-- QUICK VIEW PRODUCT MODAL -->
+  <div id="product-modal" class="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/60 backdrop-blur-xs hidden transition-opacity duration-300">
+    <div id="modal-card" class="bg-white w-full max-w-lg rounded-t-3xl sm:rounded-3xl max-h-[90vh] overflow-y-auto no-scrollbar shadow-2xl border border-stone-200 transform transition-all duration-300 translate-y-full sm:translate-y-0 sm:scale-95">
+      
+      <!-- Close button -->
+      <div class="sticky top-0 z-10 flex justify-between items-center px-5 py-4 bg-white/95 backdrop-blur border-b border-stone-100">
+        <span class="text-xs font-semibold uppercase tracking-wider text-stone-400">Chi tiết sản phẩm</span>
+        <button id="modal-close" class="w-8 h-8 rounded-full bg-stone-100 text-stone-600 hover:bg-stone-200 flex items-center justify-center transition">
+          <i class="ph-bold ph-x text-sm"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-5 space-y-4">
+        <!-- Main Image -->
+        <div class="relative rounded-2xl overflow-hidden aspect-[4/5] bg-stone-100">
+          <img id="modal-img" src="" alt="" class="w-full h-full object-cover">
+          <span id="modal-badge" class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[11px] font-bold tracking-wide uppercase shadow-sm"></span>
+        </div>
+
+        <!-- Product Name & Price -->
+        <div>
+          <h3 id="modal-title" class="font-serif text-xl sm:text-2xl font-bold text-stone-900"></h3>
+          <div class="flex items-baseline gap-2.5 mt-1.5">
+            <span id="modal-price" class="text-lg font-bold text-stone-950"></span>
+            <span id="modal-original-price" class="text-xs text-stone-400 line-through"></span>
+            <span id="modal-discount" class="text-xs font-bold text-rose-500 bg-rose-50 px-2 py-0.5 rounded-md"></span>
+          </div>
+        </div>
+
+        <!-- Rating & Sales -->
+        <div class="flex items-center gap-3 text-xs text-stone-500 pb-3 border-b border-stone-100">
+          <div class="flex items-center gap-1 text-amber-500">
+            <i class="ph-fill ph-star"></i>
+            <span class="font-semibold text-stone-800">5.0</span>
+            <span class="text-stone-400">(152 đánh giá)</span>
+          </div>
+          <span class="text-stone-300">•</span>
+          <span>Đã bán 860+</span>
+        </div>
+
+        <!-- Description -->
+        <div>
+          <h4 class="text-xs font-semibold text-stone-900 uppercase tracking-wider mb-1.5">Mô tả thiết kế</h4>
+          <p id="modal-desc" class="text-xs text-stone-600 leading-relaxed"></p>
+        </div>
+
+        <!-- Size Selection -->
+        <div>
+          <div class="flex justify-between items-center mb-1.5">
+            <span class="text-xs font-semibold text-stone-900 uppercase tracking-wider">Chọn Size</span>
+            <span class="text-[11px] text-stone-400 hover:text-stone-700 cursor-pointer underline" onclick="alert('Bảng size chuẩn Mayla:\n• Size S: 40 - 48kg (Vòng 1: 82-85, Vòng 2: 62-66)\n• Size M: 49 - 54kg (Vòng 1: 86-89, Vòng 2: 67-71)\n• Size L: 55 - 60kg (Vòng 1: 90-94, Vòng 2: 72-76)')">Bảng quy đổi size</span>
+          </div>
+          <div class="flex gap-2">
+            <button class="size-pill flex-1 py-2 rounded-xl border border-stone-900 bg-stone-900 text-white text-xs font-semibold transition">S (40-48kg)</button>
+            <button class="size-pill flex-1 py-2 rounded-xl border border-stone-200 text-stone-700 hover:border-stone-400 text-xs font-semibold transition">M (49-54kg)</button>
+            <button class="size-pill flex-1 py-2 rounded-xl border border-stone-200 text-stone-700 hover:border-stone-400 text-xs font-semibold transition">L (55-60kg)</button>
+          </div>
+        </div>
+
+        <!-- Action Order Buttons -->
+        <div class="pt-3 space-y-2">
+          <!-- Buy on Shopee Button -->
+          <a id="modal-shopee-link" href="#" target="_blank" rel="noopener noreferrer" 
+             class="w-full flex items-center justify-center gap-2 py-3 px-4 bg-[#EE4D2D] hover:bg-[#d83f20] text-white rounded-xl text-xs sm:text-sm font-semibold shadow-md active:scale-[0.99] transition">
+            <i class="ph-bold ph-shopping-bag text-base"></i>
+            <span>Mua ngay trên Shopee Mall (Freeship Xtra)</span>
+          </a>
+
+          <!-- Buy via Instagram DM -->
+          <a id="modal-insta-link" href="https://www.instagram.com/mayla.studios/" target="_blank" rel="noopener noreferrer" 
+             class="w-full flex items-center justify-center gap-2 py-3 px-4 bg-gradient-to-r from-purple-600 via-pink-600 to-rose-500 hover:opacity-95 text-white rounded-xl text-xs sm:text-sm font-semibold shadow-sm active:scale-[0.99] transition">
+            <i class="ph-bold ph-instagram-logo text-base"></i>
+            <span>Nhắn tin tư vấn trên Instagram</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING QUICK CONTACT (Zalo & Instagram) -->
+  <aside class="fixed bottom-5 right-4 z-40 flex flex-col items-end gap-2.5">
+    <!-- Floating Instagram DM -->
+    <a href="https://www.instagram.com/mayla.studios/" target="_blank" rel="noopener noreferrer" title="Tư vấn Instagram" 
+       class="w-12 h-12 rounded-full bg-gradient-to-tr from-purple-500 via-pink-500 to-rose-500 text-white flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition duration-200">
+      <i class="ph-bold ph-instagram-logo text-2xl"></i>
+    </a>
+    <!-- Floating Shopee -->
+    <a href="https://shopee.vn" target="_blank" rel="noopener noreferrer" title="Ghé Shopee Mall" 
+       class="w-12 h-12 rounded-full bg-[#EE4D2D] text-white flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition duration-200">
+      <i class="ph-bold ph-shopping-cart-simple text-2xl"></i>
+    </a>
+  </aside>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="fixed top-5 left-1/2 -translate-x-1/2 z-50 bg-stone-900/90 backdrop-blur text-white px-4 py-2.5 rounded-full text-xs font-medium shadow-xl opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-2">
+    <i class="ph-bold ph-check-circle text-emerald-400 text-base"></i>
+    <span id="toast-message">Đã sao chép link shop!</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
