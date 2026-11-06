@@ -425,6 +425,8 @@ window.openModal = function(id) {
 function closeModal() {
   productModal.classList.remove('show');
   document.body.style.overflow = '';
+  const sizeChartTable = document.getElementById('size-chart-table');
+  if (sizeChartTable) sizeChartTable.classList.add('hidden');
 }
 
 modalCloseBtn.addEventListener('click', closeModal);
@@ -438,7 +440,18 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+// SIZE CHART ACCORDION TOGGLE
+const toggleSizeChartBtn = document.getElementById('toggle-size-chart');
+const sizeChartTable = document.getElementById('size-chart-table');
+if (toggleSizeChartBtn && sizeChartTable) {
+  toggleSizeChartBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    sizeChartTable.classList.toggle('hidden');
+  });
+}
+
 // SIZE PILL TOGGLE IN MODAL
+let selectedSize = 'S';
 document.querySelectorAll('.size-pill').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.size-pill').forEach(b => {
@@ -447,7 +460,19 @@ document.querySelectorAll('.size-pill').forEach(btn => {
     });
     btn.classList.add('bg-stone-900', 'text-white', 'border-stone-900');
     btn.classList.remove('border-stone-200', 'text-stone-700');
+    selectedSize = btn.getAttribute('data-size') || 'S';
   });
+});
+
+// INSTAGRAM MODAL ORDER MESSAGE HELPER
+modalInstaLink.addEventListener('click', () => {
+  const currentTitle = modalTitle.textContent || 'thiết kế Mayla';
+  const orderMsg = `Chào Mayla Studios, mình muốn tư vấn đặt mẫu "${currentTitle}" (Size ${selectedSize}) ạ! ✨`;
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(orderMsg).then(() => {
+      showToast(`Đã sao chép nội dung: "${currentTitle} - Size ${selectedSize}"! ✨`);
+    });
+  }
 });
 
 // SEARCH BAR EVENTS
