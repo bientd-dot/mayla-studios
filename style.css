@@ -83,6 +83,31 @@ html {
   transform: translate(-50%, 10px);
 }
 
+/* Custom Dropdown Animation & Styling */
+#custom-sort-menu {
+  transform-origin: top right;
+}
+
+#custom-sort-menu.show {
+  display: block !important;
+  animation: dropdownPop 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes dropdownPop {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.sort-option:active {
+  transform: scale(0.98);
+}
+
 /* Line clamps */
 .line-clamp-2 {
   display: -webkit-box;

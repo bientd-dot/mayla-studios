@@ -199,15 +199,34 @@
           </button>
         </div>
 
-        <!-- Sort dropdown toggle -->
-        <div class="relative">
-          <select id="sort-select" class="appearance-none bg-white border border-stone-200/90 rounded-2xl px-3.5 py-2.5 text-xs text-stone-700 focus:outline-none focus:ring-2 focus:ring-brand-400/50 pr-8 shadow-sm cursor-pointer font-medium">
-            <option value="featured">Nổi bật</option>
-            <option value="price-low">Giá: Thấp → Cao</option>
-            <option value="price-high">Giá: Cao → Thấp</option>
-            <option value="name">Tên A-Z</option>
-          </select>
-          <i class="ph ph-caret-down absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 pointer-events-none text-xs"></i>
+        <!-- Custom Styled Sort Dropdown -->
+        <div class="relative" id="custom-sort-dropdown">
+          <button type="button" id="custom-sort-btn" 
+                  class="flex items-center gap-2 bg-white border border-stone-200/90 hover:border-stone-400 rounded-2xl px-3.5 py-2.5 text-xs text-stone-700 shadow-xs focus:outline-none focus:ring-2 focus:ring-brand-400/40 transition active:scale-95 font-medium whitespace-nowrap cursor-pointer">
+            <span id="custom-sort-label">Nổi bật</span>
+            <i class="ph ph-caret-down text-stone-400 text-xs transition-transform duration-200" id="custom-sort-arrow"></i>
+          </button>
+
+          <!-- Dropdown Menu Popup -->
+          <div id="custom-sort-menu" 
+               class="hidden absolute right-0 mt-1.5 w-44 bg-white/95 backdrop-blur-md border border-stone-200/80 rounded-2xl shadow-xl p-1 z-30 transition-all duration-200">
+            <button type="button" class="sort-option w-full px-3 py-2 text-left text-xs rounded-xl text-stone-800 bg-stone-100/80 font-semibold flex items-center justify-between transition cursor-pointer" data-value="featured" data-label="Nổi bật">
+              <span>Nổi bật</span>
+              <i class="ph-bold ph-check text-[#7B1824] text-xs check-icon"></i>
+            </button>
+            <button type="button" class="sort-option w-full px-3 py-2 text-left text-xs rounded-xl text-stone-600 hover:bg-stone-50 hover:text-stone-900 font-medium flex items-center justify-between transition cursor-pointer" data-value="price-low" data-label="Giá: Thấp → Cao">
+              <span>Giá: Thấp → Cao</span>
+              <i class="ph-bold ph-check text-[#7B1824] text-xs check-icon hidden"></i>
+            </button>
+            <button type="button" class="sort-option w-full px-3 py-2 text-left text-xs rounded-xl text-stone-600 hover:bg-stone-50 hover:text-stone-900 font-medium flex items-center justify-between transition cursor-pointer" data-value="price-high" data-label="Giá: Cao → Thấp">
+              <span>Giá: Cao → Thấp</span>
+              <i class="ph-bold ph-check text-[#7B1824] text-xs check-icon hidden"></i>
+            </button>
+            <button type="button" class="sort-option w-full px-3 py-2 text-left text-xs rounded-xl text-stone-600 hover:bg-stone-50 hover:text-stone-900 font-medium flex items-center justify-between transition cursor-pointer" data-value="name" data-label="Tên A-Z">
+              <span>Tên A-Z</span>
+              <i class="ph-bold ph-check text-[#7B1824] text-xs check-icon hidden"></i>
+            </button>
+          </div>
         </div>
       </div>
 

@@ -129,10 +129,17 @@ const productGrid = document.getElementById('product-grid');
 const categoryPillsContainer = document.getElementById('category-pills');
 const searchInput = document.getElementById('search-input');
 const searchClearBtn = document.getElementById('search-clear');
-const sortSelect = document.getElementById('sort-select');
 const productCountEl = document.getElementById('product-count');
 const emptyStateEl = document.getElementById('empty-state');
 const wishlistBadgeEl = document.getElementById('wishlist-badge');
+
+// Custom Dropdown Elements
+const customSortDropdown = document.getElementById('custom-sort-dropdown');
+const customSortBtn = document.getElementById('custom-sort-btn');
+const customSortMenu = document.getElementById('custom-sort-menu');
+const customSortArrow = document.getElementById('custom-sort-arrow');
+const customSortLabel = document.getElementById('custom-sort-label');
+const sortOptions = document.querySelectorAll('.sort-option');
 
 // Modal Elements
 const productModal = document.getElementById('product-modal');
@@ -200,7 +207,23 @@ window.resetFilters = function() {
   currentSort = 'featured';
   searchInput.value = '';
   searchClearBtn.classList.add('hidden');
-  sortSelect.value = 'featured';
+  
+  // Reset custom sort UI
+  customSortLabel.textContent = 'Nổi bật';
+  sortOptions.forEach(opt => {
+    const isFeatured = opt.getAttribute('data-value') === 'featured';
+    const check = opt.querySelector('.check-icon');
+    if (isFeatured) {
+      opt.classList.add('bg-stone-100/80', 'text-stone-800', 'font-semibold');
+      opt.classList.remove('text-stone-600', 'hover:bg-stone-50', 'font-medium');
+      if (check) check.classList.remove('hidden');
+    } else {
+      opt.classList.remove('bg-stone-100/80', 'text-stone-800', 'font-semibold');
+      opt.classList.add('text-stone-600', 'hover:bg-stone-50', 'font-medium');
+      if (check) check.classList.add('hidden');
+    }
+  });
+
   renderCategoryPills();
   renderProducts();
 };
@@ -445,10 +468,68 @@ searchClearBtn.addEventListener('click', () => {
   renderProducts();
 });
 
-// SORT SELECT
-sortSelect.addEventListener('change', (e) => {
-  currentSort = e.target.value;
-  renderProducts();
+// CUSTOM SORT DROPDOWN LOGIC
+function toggleSortMenu() {
+  const isOpen = customSortMenu.classList.contains('show');
+  if (isOpen) {
+    closeSortMenu();
+  } else {
+    customSortMenu.classList.remove('hidden');
+    // Force reflow
+    void customSortMenu.offsetWidth;
+    customSortMenu.classList.add('show');
+    customSortArrow.classList.add('rotate-180');
+  }
+}
+
+function closeSortMenu() {
+  customSortMenu.classList.remove('show');
+  customSortArrow.classList.remove('rotate-180');
+  setTimeout(() => {
+    if (!customSortMenu.classList.contains('show')) {
+      customSortMenu.classList.add('hidden');
+    }
+  }, 150);
+}
+
+customSortBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  toggleSortMenu();
+});
+
+sortOptions.forEach(opt => {
+  opt.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const val = opt.getAttribute('data-value');
+    const label = opt.getAttribute('data-label');
+    currentSort = val;
+    customSortLabel.textContent = label;
+
+    // Update active styles and check icons
+    sortOptions.forEach(o => {
+      const isSelected = o === opt;
+      const check = o.querySelector('.check-icon');
+      if (isSelected) {
+        o.classList.add('bg-stone-100/80', 'text-stone-800', 'font-semibold');
+        o.classList.remove('text-stone-600', 'hover:bg-stone-50', 'font-medium');
+        if (check) check.classList.remove('hidden');
+      } else {
+        o.classList.remove('bg-stone-100/80', 'text-stone-800', 'font-semibold');
+        o.classList.add('text-stone-600', 'hover:bg-stone-50', 'font-medium');
+        if (check) check.classList.add('hidden');
+      }
+    });
+
+    closeSortMenu();
+    renderProducts();
+  });
+});
+
+// Close dropdown when clicking outside
+document.addEventListener('click', (e) => {
+  if (customSortDropdown && !customSortDropdown.contains(e.target)) {
+    closeSortMenu();
+  }
 });
 
 // SHARE BUTTON (COPY LINK)
