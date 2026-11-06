@@ -1,191 +1,120 @@
 /**
  * MAYLA STUDIOS - Bio Storefront JavaScript
- * Pure Vanilla JS, responsive & lightweight
+ * Official products cloned directly from @mayla.studios Instagram posts
  */
 
-// PRODUCT DATABASE (Aesthetic pieces inspired by @mayla.studios)
-// Supports local images (images/sp1.jpg, images/sp2.jpg...) with smart fallback
+// PRODUCT DATABASE (Direct from Mayla Studios Instagram)
 const PRODUCTS = [
   {
     id: 1,
-    name: "Rosé Silk Midi Dress - Đầm Lụa Thắt Nơ Lưng",
-    category: "dresses",
-    price: 495000,
-    originalPrice: 590000,
+    name: "Floral Top & White Boho Harem Pants",
+    category: "sets",
+    price: 520000,
+    originalPrice: 620000,
     discount: "-16%",
     badge: "HOT",
     image: "images/sp1.jpg",
     fallbackImage: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=700&q=80",
-    desc: "Đầm dáng midi may trên nền lụa ngọc trai mềm mát không nhăn, thiết kế chiết eo tôn dáng cùng chi tiết cut-out nhẹ tinh tế sau lưng. Rất thích hợp cho những buổi tiệc trà, sinh nhật hay du lịch.",
+    desc: "Set Floral Top kết hợp cùng White Boho Harem Pants with Lace Trim viền ren tinh tế. Phong cách tiểu thư boho nữ tính, phom dáng bay bổng nhẹ nhàng. Size: S | M | L. Pre-order now open - Free shipping for early orders.",
     shopeeUrl: "https://shopee.vn",
-    instaUrl: "https://www.instagram.com/mayla.studios/",
-    sold: 842,
+    instaUrl: "https://www.instagram.com/p/De1Fyrglvf_/",
+    sold: 540,
     rating: 5.0,
-    reviews: 189
+    reviews: 126
   },
   {
     id: 2,
-    name: "Aurelia Tweed Set - Set Áo Tweed Phối Chân Váy Chữ A",
+    name: "Belle Top & Ivory Mini Skirt Set",
     category: "sets",
-    price: 680000,
-    originalPrice: 850000,
-    discount: "-20%",
-    badge: "BEST",
+    price: 490000,
+    originalPrice: 580000,
+    discount: "-15%",
+    badge: "NEW",
     image: "images/sp2.jpg",
     fallbackImage: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=80",
-    desc: "Set dạ tweed dệt sợi kim tuyến ánh nhẹ sang trọng, viền chỉ tết thủ công. Phom áo croptop vừa vặn tôn vòng eo phối cùng chân váy chữ A kèm quần bảo hộ bên trong tiện lợi.",
+    desc: "Set áo Belle Top phối cùng chân váy ngắn Ivory Mini Skirt. Thiết kế tôn trọn eo thon và nét duyên dáng thanh lịch, phù hợp cho buổi hẹn hò, cafe cuối tuần. Size: S | M | L. #vietnamlocalbrand",
     shopeeUrl: "https://shopee.vn",
-    instaUrl: "https://www.instagram.com/mayla.studios/",
-    sold: 630,
+    instaUrl: "https://www.instagram.com/p/DewfzNaFvBH/",
+    sold: 430,
     rating: 4.9,
-    reviews: 135
+    reviews: 95
   },
   {
     id: 3,
-    name: "Clara Chiffon Blouse - Áo Voan Tơ Cổ Bèo Pháp",
-    category: "tops",
-    price: 360000,
-    originalPrice: 420000,
-    discount: "-14%",
-    badge: "NEW",
+    name: "Soft Blue Mood Dress - MAYLA Elegant",
+    category: "dresses",
+    price: 550000,
+    originalPrice: 650000,
+    discount: "-15%",
+    badge: "BEST",
     image: "images/sp3.jpg",
-    fallbackImage: "https://images.unsplash.com/photo-1564257631407-4deb129f042b?auto=format&fit=crop&w=700&q=80",
-    desc: "Áo sơ mi voan tơ Hàn Quốc mềm rũ, tay phồng bo chun nhẹ phối cổ xếp bèo nữ tính. Mix cùng chân váy midi hoặc quần tây ống suông đi làm đều vô cùng trang nhã.",
+    fallbackImage: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=700&q=80",
+    desc: "Soft blue, soft mood. 🩵 Elegance in every little detail. MAYLA see you in your own way. Tone xanh pastel mát lành, thiết kế nữ tính mềm mại cho mọi góc nhìn. Color: Blue. Size: S | M | L. Pre-order now open.",
     shopeeUrl: "https://shopee.vn",
-    instaUrl: "https://www.instagram.com/mayla.studios/",
-    sold: 512,
-    rating: 4.9,
-    reviews: 98
+    instaUrl: "https://www.instagram.com/p/DeJ8CN0n4hK/",
+    sold: 680,
+    rating: 5.0,
+    reviews: 142
   },
   {
     id: 4,
-    name: "Daisy Muse Dress - Đầm Voan Hoa Nhí Cổ Vuông",
-    category: "dresses",
-    price: 450000,
-    originalPrice: 520000,
-    discount: "-13%",
-    badge: "HOT",
-    image: "images/sp4.jpg",
-    fallbackImage: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=700&q=80",
-    desc: "Họa tiết hoa cúc nhí pastel cổ điển ngọt ngào trên nền vải chiffon lót lụa habutai êm mềm. Phần ngực may nhún co giãn ôm sát tôn vòng một tự nhiên.",
-    shopeeUrl: "https://shopee.vn",
-    instaUrl: "https://www.instagram.com/mayla.studios/",
-    sold: 1100,
-    rating: 5.0,
-    reviews: 260
-  },
-  {
-    id: 5,
-    name: "Parisian Linen Blazer - Áo Vest Nữ Phom Suông Tone Be",
-    category: "outers",
-    price: 590000,
-    originalPrice: 720000,
-    discount: "-18%",
-    badge: "SALE",
-    image: "images/sp5.jpg",
-    fallbackImage: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=700&q=80",
-    desc: "Chất liệu linen tưng cao cấp đã qua xử lý hạn chế nhăn tối đa. Thiết kế 2 hàng khuy cổ điển, đệm vai mỏng tạo phom chuẩn chỉnh thanh lịch cho nàng công sở.",
-    shopeeUrl: "https://shopee.vn",
-    instaUrl: "https://www.instagram.com/mayla.studios/",
-    sold: 430,
-    rating: 4.8,
-    reviews: 82
-  },
-  {
-    id: 6,
-    name: "Flora Pleated Skirt - Chân Váy Xếp Ly Dáng Dài Cao Cấp",
-    category: "bottoms",
+    name: "Find Your Mood - Mayla Daily Muse Top",
+    category: "tops",
     price: 380000,
     originalPrice: 450000,
     discount: "-15%",
+    badge: "HOT",
+    image: "images/sp4.jpg",
+    fallbackImage: "https://images.unsplash.com/photo-1564257631407-4deb129f042b?auto=format&fit=crop&w=700&q=80",
+    desc: "Find your mood. Find your Mayla. Mẫu áo kiểu nhẹ nhàng thoáng mát, phom dáng thanh thoát dễ dàng mix-match cùng quần suông hoặc chân váy chữ A.",
+    shopeeUrl: "https://shopee.vn",
+    instaUrl: "https://www.instagram.com/p/DeJbplksLJO/",
+    sold: 310,
+    rating: 4.9,
+    reviews: 73
+  },
+  {
+    id: 5,
+    name: "Ivory Muse Set - Creamy, Dreamy & Feminine",
+    category: "sets",
+    price: 590000,
+    originalPrice: 720000,
+    discount: "-18%",
+    badge: "BEST",
+    image: "images/sp5.jpg",
+    fallbackImage: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=700&q=80",
+    desc: "“Creamy, dreamy & effortlessly feminine 💝”. Bộ thiết kế signature Ivory Muse set đình đám của Mayla Studios. Tông màu ngà ấm áp, chất liệu vải thượng hạng ôm lượn mềm mại theo từng cử chỉ. Color: Ivory. Size: S | M | L.",
+    shopeeUrl: "https://shopee.vn",
+    instaUrl: "https://www.instagram.com/p/DeBs-WyE88Q/",
+    sold: 890,
+    rating: 5.0,
+    reviews: 210
+  },
+  {
+    id: 6,
+    name: "Mayla Look - Signature Feminine Muse",
+    category: "dresses",
+    price: 560000,
+    originalPrice: 680000,
+    discount: "-17%",
     badge: "NEW",
     image: "images/sp6.jpg",
-    fallbackImage: "https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?auto=format&fit=crop&w=700&q=80",
-    desc: "Chân váy xếp ly nhỏ dập nhiệt công nghệ cao không bị mất nếp sau khi giặt. Cạp chun co giãn dễ chịu, độ xòe vừa phải tôn dáng thon gọn.",
-    shopeeUrl: "https://shopee.vn",
-    instaUrl: "https://www.instagram.com/mayla.studios/",
-    sold: 375,
-    rating: 4.9,
-    reviews: 74
-  },
-  {
-    id: 7,
-    name: "Grace Satin Camisole Dress - Váy Lụa Hai Dây Xẻ Tà",
-    category: "dresses",
-    price: 460000,
-    originalPrice: 550000,
-    discount: "-16%",
-    badge: "HOT",
-    image: "images/sp7.jpg",
     fallbackImage: "https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?auto=format&fit=crop&w=700&q=80",
-    desc: "Váy 2 dây quai mảnh tinh xảo, đường cắt bias ôm lượn theo đường cong cơ thể. Chi tiết xẻ tà một bên khéo léo tạo hiệu ứng kéo dài đôi chân.",
+    desc: "Join the Mayla look 🌷. Thiết kế đầm tiểu thư chuẩn phong cách Mayla Studios. Sự giao thoa giữa nét thanh lịch hiện đại và vẻ đẹp ngọt ngào tinh khiết.",
     shopeeUrl: "https://shopee.vn",
-    instaUrl: "https://www.instagram.com/mayla.studios/",
-    sold: 920,
-    rating: 5.0,
-    reviews: 215
-  },
-  {
-    id: 8,
-    name: "Minimalist High-waist Pants - Quần Tây Cạp Cao Xếp Ly",
-    category: "bottoms",
-    price: 420000,
-    originalPrice: 490000,
-    discount: "-14%",
-    badge: "BEST",
-    image: "images/sp8.jpg",
-    fallbackImage: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=700&q=80",
-    desc: "Quần âu ống suông rộng chất chéo Ý đứng phom, lưng cao ôm gọn bụng dưới, hack chân cực đỉnh khi kết hợp cùng giày cao gót hoặc sneaker trắng.",
-    shopeeUrl: "https://shopee.vn",
-    instaUrl: "https://www.instagram.com/mayla.studios/",
-    sold: 670,
+    instaUrl: "https://www.instagram.com/p/DeBjI4iTkWr/",
+    sold: 490,
     rating: 4.9,
-    reviews: 140
-  },
-  {
-    id: 9,
-    name: "Cozy Ribbed Knit Set - Set Áo Len Tăm & Chân Váy Bút Chì",
-    category: "sets",
-    price: 520000,
-    originalPrice: 650000,
-    discount: "-20%",
-    badge: "SALE",
-    image: "images/sp9.jpg",
-    fallbackImage: "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=700&q=80",
-    desc: "Set len dệt kim sợi organic co giãn 4 chiều mềm mịn không ngứa dặm. Gam màu be sữa ấm áp, tôn da và cực kỳ dễ phối đồ thu đông.",
-    shopeeUrl: "https://shopee.vn",
-    instaUrl: "https://www.instagram.com/mayla.studios/",
-    sold: 290,
-    rating: 4.8,
-    reviews: 65
-  },
-  {
-    id: 10,
-    name: "Off-shoulder Linen Top - Áo Trễ Vai Vải Tơ Thêu Nổi",
-    category: "tops",
-    price: 340000,
-    originalPrice: 390000,
-    discount: "-12%",
-    badge: "NEW",
-    image: "images/sp10.jpg",
-    fallbackImage: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=700&q=80",
-    desc: "Thiết kế trễ vai khoe xương quai xanh quyến rũ, chất vải tơ xước thêu hoa cành tinh xảo. Bo chun tay áo bồng bềnh như mây.",
-    shopeeUrl: "https://shopee.vn",
-    instaUrl: "https://www.instagram.com/mayla.studios/",
-    sold: 410,
-    rating: 4.9,
-    reviews: 88
+    reviews: 104
   }
 ];
 
 // CATEGORIES CONFIG
 const CATEGORIES = [
-  { id: 'all', name: 'Tất cả', icon: 'ph-sparkle' },
-  { id: 'dresses', name: 'Đầm & Váy', icon: 'ph-dress' },
-  { id: 'sets', name: 'Set Đồ & Tweed', icon: 'ph-t-shirt' },
-  { id: 'tops', name: 'Áo Kiểu & Sơ Mi', icon: 'ph-flower' },
-  { id: 'outers', name: 'Áo Khoác & Blazer', icon: 'ph-coat-hanger' },
-  { id: 'bottoms', name: 'Chân Váy & Quần', icon: 'ph-scissors' },
+  { id: 'all', name: 'Tất cả' },
+  { id: 'sets', name: 'Set Đồ & Muse' },
+  { id: 'dresses', name: 'Đầm & Váy' },
+  { id: 'tops', name: 'Áo Kiểu' },
 ];
 
 // STATE
@@ -279,23 +208,16 @@ window.resetFilters = function() {
 // GET FILTERED AND SORTED PRODUCTS
 function getFilteredProducts() {
   let list = PRODUCTS.filter(item => {
-    // Category match
     const matchCat = activeCategory === 'all' || item.category === activeCategory;
-    
-    // Search query match (name, desc, category)
     const q = searchQuery.toLowerCase().trim();
     const matchSearch = !q || 
       item.name.toLowerCase().includes(q) || 
       item.desc.toLowerCase().includes(q) ||
       item.category.toLowerCase().includes(q);
-
-    // Badge filter
     const matchBadge = !activeBadge || item.badge === activeBadge;
-
     return matchCat && matchSearch && matchBadge;
   });
 
-  // Sorting
   if (currentSort === 'price-low') {
     list.sort((a, b) => a.price - b.price);
   } else if (currentSort === 'price-high') {
@@ -321,8 +243,6 @@ function getBadgeClass(badge) {
 // RENDER PRODUCTS
 function renderProducts() {
   const filtered = getFilteredProducts();
-
-  // Update counter
   productCountEl.textContent = `${filtered.length} thiết kế có sẵn`;
 
   if (filtered.length === 0) {
@@ -435,7 +355,6 @@ document.getElementById('btn-wishlist-toggle').addEventListener('click', () => {
     showToast("Nàng chưa bấm thích mẫu nào cả!");
     return;
   }
-  // Filter products by wishlist
   const originalProducts = PRODUCTS.filter(p => wishlist.includes(p.id));
   productGrid.innerHTML = originalProducts.map(item => `
     <div class="product-card bg-white rounded-2xl overflow-hidden border border-stone-200/70 shadow-xs flex flex-col justify-between cursor-pointer" onclick="openModal(${item.id})">
