@@ -4,6 +4,7 @@
  */
 
 // PRODUCT DATABASE (Aesthetic pieces inspired by @mayla.studios)
+// Supports local images (images/sp1.jpg, images/sp2.jpg...) with smart fallback
 const PRODUCTS = [
   {
     id: 1,
@@ -13,7 +14,8 @@ const PRODUCTS = [
     originalPrice: 590000,
     discount: "-16%",
     badge: "HOT",
-    image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=700&q=80",
+    image: "images/sp1.jpg",
+    fallbackImage: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=700&q=80",
     desc: "Đầm dáng midi may trên nền lụa ngọc trai mềm mát không nhăn, thiết kế chiết eo tôn dáng cùng chi tiết cut-out nhẹ tinh tế sau lưng. Rất thích hợp cho những buổi tiệc trà, sinh nhật hay du lịch.",
     shopeeUrl: "https://shopee.vn",
     instaUrl: "https://www.instagram.com/mayla.studios/",
@@ -29,7 +31,8 @@ const PRODUCTS = [
     originalPrice: 850000,
     discount: "-20%",
     badge: "BEST",
-    image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=80",
+    image: "images/sp2.jpg",
+    fallbackImage: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=80",
     desc: "Set dạ tweed dệt sợi kim tuyến ánh nhẹ sang trọng, viền chỉ tết thủ công. Phom áo croptop vừa vặn tôn vòng eo phối cùng chân váy chữ A kèm quần bảo hộ bên trong tiện lợi.",
     shopeeUrl: "https://shopee.vn",
     instaUrl: "https://www.instagram.com/mayla.studios/",
@@ -45,7 +48,8 @@ const PRODUCTS = [
     originalPrice: 420000,
     discount: "-14%",
     badge: "NEW",
-    image: "https://images.unsplash.com/photo-1564257631407-4deb129f042b?auto=format&fit=crop&w=700&q=80",
+    image: "images/sp3.jpg",
+    fallbackImage: "https://images.unsplash.com/photo-1564257631407-4deb129f042b?auto=format&fit=crop&w=700&q=80",
     desc: "Áo sơ mi voan tơ Hàn Quốc mềm rũ, tay phồng bo chun nhẹ phối cổ xếp bèo nữ tính. Mix cùng chân váy midi hoặc quần tây ống suông đi làm đều vô cùng trang nhã.",
     shopeeUrl: "https://shopee.vn",
     instaUrl: "https://www.instagram.com/mayla.studios/",
@@ -61,7 +65,8 @@ const PRODUCTS = [
     originalPrice: 520000,
     discount: "-13%",
     badge: "HOT",
-    image: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=700&q=80",
+    image: "images/sp4.jpg",
+    fallbackImage: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=700&q=80",
     desc: "Họa tiết hoa cúc nhí pastel cổ điển ngọt ngào trên nền vải chiffon lót lụa habutai êm mềm. Phần ngực may nhún co giãn ôm sát tôn vòng một tự nhiên.",
     shopeeUrl: "https://shopee.vn",
     instaUrl: "https://www.instagram.com/mayla.studios/",
@@ -77,7 +82,8 @@ const PRODUCTS = [
     originalPrice: 720000,
     discount: "-18%",
     badge: "SALE",
-    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=700&q=80",
+    image: "images/sp5.jpg",
+    fallbackImage: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=700&q=80",
     desc: "Chất liệu linen tưng cao cấp đã qua xử lý hạn chế nhăn tối đa. Thiết kế 2 hàng khuy cổ điển, đệm vai mỏng tạo phom chuẩn chỉnh thanh lịch cho nàng công sở.",
     shopeeUrl: "https://shopee.vn",
     instaUrl: "https://www.instagram.com/mayla.studios/",
@@ -93,7 +99,8 @@ const PRODUCTS = [
     originalPrice: 450000,
     discount: "-15%",
     badge: "NEW",
-    image: "https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?auto=format&fit=crop&w=700&q=80",
+    image: "images/sp6.jpg",
+    fallbackImage: "https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?auto=format&fit=crop&w=700&q=80",
     desc: "Chân váy xếp ly nhỏ dập nhiệt công nghệ cao không bị mất nếp sau khi giặt. Cạp chun co giãn dễ chịu, độ xòe vừa phải tôn dáng thon gọn.",
     shopeeUrl: "https://shopee.vn",
     instaUrl: "https://www.instagram.com/mayla.studios/",
@@ -109,7 +116,8 @@ const PRODUCTS = [
     originalPrice: 550000,
     discount: "-16%",
     badge: "HOT",
-    image: "https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?auto=format&fit=crop&w=700&q=80",
+    image: "images/sp7.jpg",
+    fallbackImage: "https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?auto=format&fit=crop&w=700&q=80",
     desc: "Váy 2 dây quai mảnh tinh xảo, đường cắt bias ôm lượn theo đường cong cơ thể. Chi tiết xẻ tà một bên khéo léo tạo hiệu ứng kéo dài đôi chân.",
     shopeeUrl: "https://shopee.vn",
     instaUrl: "https://www.instagram.com/mayla.studios/",
@@ -125,7 +133,8 @@ const PRODUCTS = [
     originalPrice: 490000,
     discount: "-14%",
     badge: "BEST",
-    image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=700&q=80",
+    image: "images/sp8.jpg",
+    fallbackImage: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=700&q=80",
     desc: "Quần âu ống suông rộng chất chéo Ý đứng phom, lưng cao ôm gọn bụng dưới, hack chân cực đỉnh khi kết hợp cùng giày cao gót hoặc sneaker trắng.",
     shopeeUrl: "https://shopee.vn",
     instaUrl: "https://www.instagram.com/mayla.studios/",
@@ -141,7 +150,8 @@ const PRODUCTS = [
     originalPrice: 650000,
     discount: "-20%",
     badge: "SALE",
-    image: "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=700&q=80",
+    image: "images/sp9.jpg",
+    fallbackImage: "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=700&q=80",
     desc: "Set len dệt kim sợi organic co giãn 4 chiều mềm mịn không ngứa dặm. Gam màu be sữa ấm áp, tôn da và cực kỳ dễ phối đồ thu đông.",
     shopeeUrl: "https://shopee.vn",
     instaUrl: "https://www.instagram.com/mayla.studios/",
@@ -157,7 +167,8 @@ const PRODUCTS = [
     originalPrice: 390000,
     discount: "-12%",
     badge: "NEW",
-    image: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=700&q=80",
+    image: "images/sp10.jpg",
+    fallbackImage: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=700&q=80",
     desc: "Thiết kế trễ vai khoe xương quai xanh quyến rũ, chất vải tơ xước thêu hoa cành tinh xảo. Bo chun tay áo bồng bềnh như mây.",
     shopeeUrl: "https://shopee.vn",
     instaUrl: "https://www.instagram.com/mayla.studios/",
@@ -328,9 +339,13 @@ function renderProducts() {
       <div class="product-card bg-white rounded-2xl overflow-hidden border border-stone-200/70 shadow-xs flex flex-col justify-between cursor-pointer group"
            onclick="openModal(${item.id})">
         
-        <!-- Image & Tags Container -->
+        <!-- Image & Tags Container with smart fallback -->
         <div class="img-container relative aspect-[3/4] overflow-hidden bg-stone-100">
-          <img src="${item.image}" alt="${item.name}" loading="lazy" class="w-full h-full object-cover">
+          <img src="${item.image}" 
+               onerror="this.onerror=null; this.src='${item.fallbackImage}'"
+               alt="${item.name}" 
+               loading="lazy" 
+               class="w-full h-full object-cover">
           
           <!-- Badge -->
           <div class="absolute top-2.5 left-2.5 flex flex-col gap-1 items-start">
@@ -425,7 +440,7 @@ document.getElementById('btn-wishlist-toggle').addEventListener('click', () => {
   productGrid.innerHTML = originalProducts.map(item => `
     <div class="product-card bg-white rounded-2xl overflow-hidden border border-stone-200/70 shadow-xs flex flex-col justify-between cursor-pointer" onclick="openModal(${item.id})">
       <div class="img-container relative aspect-[3/4] overflow-hidden bg-stone-100">
-        <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover">
+        <img src="${item.image}" onerror="this.onerror=null; this.src='${item.fallbackImage}'" alt="${item.name}" class="w-full h-full object-cover">
         <button onclick="event.stopPropagation(); toggleWishlist(${item.id})" class="absolute top-2.5 right-2.5 w-7 h-7 rounded-full bg-white/90 text-rose-500 flex items-center justify-center shadow-xs">
           <i class="ph-fill ph-heart text-sm"></i>
         </button>
@@ -446,6 +461,10 @@ window.openModal = function(id) {
   if (!item) return;
 
   modalImg.src = item.image;
+  modalImg.onerror = function() {
+    this.onerror = null;
+    this.src = item.fallbackImage;
+  };
   modalBadge.textContent = item.badge;
   modalBadge.className = `absolute top-3 left-3 px-2.5 py-1 rounded-full text-[11px] font-bold tracking-wide uppercase shadow-sm ${getBadgeClass(item.badge)}`;
   modalTitle.textContent = item.name;
